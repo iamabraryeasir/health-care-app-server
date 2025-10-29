@@ -1,11 +1,17 @@
-import express from "express";
+import { Router } from "express";
+import { UserRouter } from "../modules/user/user.routes";
 
-const router = express.Router();
+const router = Router();
 
-const moduleRoutes = [
+interface IRoutes {
+    path: string;
+    route: Router;
+}
+
+const moduleRoutes: IRoutes[] = [
     {
-        path: "/",
-        route: router,
+        path: "/user",
+        route: UserRouter,
     },
 ];
 
